@@ -8,7 +8,8 @@ namespace RentalCS
 {
     class TotalRental
     {
-        public int CustomerId { get; set; }
+        private Rates _rates;
+        public Guid CustomerId { get; set; }
         public DateTime RentalDate { get; set; }
         public int id { get; set; }
         public List<UnitRental>  RentalItems { get; set; }
@@ -21,6 +22,12 @@ namespace RentalCS
             }
         }
 
+        public TotalRental(Rates rates, List<UnitRental> Items)
+        {
+            _rates = rates;
+            RentalItems = Items;
+        }
+
         private  double CalculateTotalCost()
         {
             double TotalCost = 0;
@@ -30,9 +37,9 @@ namespace RentalCS
 
             TotalCost = RentalItems.Sum(z => z.Charge());
 
-            if ( IsFamilyRental && (RentalItems.Count >=3 && RentalItems.Count <= 5))
+            if ( IsFamilyRental && (RentalItems.Count >= _rates.GetFamilyMin() && RentalItems.Count <= _rates.GetFamilyMax()))
             {
-                return TotalCost * 0.7 ;
+                return TotalCost * _rates.GetFamilyDiscount() ;
             }
             
             return TotalCost;

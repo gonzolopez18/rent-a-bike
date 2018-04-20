@@ -9,9 +9,16 @@ namespace RentalCS
 {
     class HourlyCharger : ICharger
     {
+        private Rates _rates;
+
+        public HourlyCharger(Rates rates)
+        {
+            _rates = rates;
+        }
+
         public double Charge(int quantity)
         {
-            return quantity * 5;
+            return quantity * _rates.GetHourlyCost();
         }
     }
 }

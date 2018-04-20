@@ -17,10 +17,10 @@ namespace RentalCS
     {
         ICharger Charger = null;
 
+        public Guid Id { get; set; }
         public int Quantity { get; set; }
         public RentalType RentType { get; set; }
         public DateTime InitDate { get; set; }
-        public int BikeId { get; set; }
 
 
         public double Charge()

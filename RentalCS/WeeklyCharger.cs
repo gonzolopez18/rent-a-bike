@@ -9,9 +9,16 @@ namespace RentalCS
 {
     class WeeklyCharger : ICharger
     {
+        private Rates _rates;
+
+        public WeeklyCharger(Rates rates)
+        {
+            _rates = rates;
+        }
+
         public double Charge(int quantity)
         {
-            return quantity * 60;
+            return quantity * _rates.GetWeeklyCost();
         }
     }
 }

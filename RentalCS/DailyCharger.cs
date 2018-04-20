@@ -10,9 +10,17 @@ namespace RentalCS
     class DailyCharger : ICharger
 
     {
+        private Rates _rates;
+
+        public DailyCharger (Rates rates)
+        {
+            _rates = rates;
+        }
+
         public double Charge(int quantity)
         {
-           return quantity * 20;
+            return quantity * _rates.GetDailyCost();
         }
+
     }
 }

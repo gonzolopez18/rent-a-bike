@@ -44,6 +44,7 @@
     <Compile Include="DailyCharger.cs" />
     <Compile Include="HourlyCharger.cs" />
     <Compile Include="ICharger.cs" />
+    <Compile Include="Rates.cs" />
     <Compile Include="TotalRental.cs" />
     <Compile Include="UnitRental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
