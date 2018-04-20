@@ -21,8 +21,6 @@ namespace RentalCS
             }
         }
 
-
-
         private  double CalculateTotalCost()
         {
             double TotalCost = 0;

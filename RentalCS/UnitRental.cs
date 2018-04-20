@@ -22,6 +22,7 @@ namespace RentalCS
         public DateTime InitDate { get; set; }
         public int BikeId { get; set; }
 
+
         public double Charge()
         {
             ChargerFactory factory = new ChargerFactory();
