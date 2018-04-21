@@ -10,9 +10,9 @@ namespace RentalCS
     class DailyCharger : ICharger
 
     {
-        private Rates _rates;
+        private IRates _rates;
 
-        public DailyCharger (Rates rates)
+        public DailyCharger (IRates rates)
         {
             _rates = rates;
         }

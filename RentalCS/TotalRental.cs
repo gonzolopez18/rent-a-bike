@@ -8,7 +8,7 @@ namespace RentalCS
 {
     class TotalRental
     {
-        private Rates _rates;
+        private IRates _rates;
         public Guid CustomerId { get; set; }
         public DateTime RentalDate { get; set; }
         public int id { get; set; }
@@ -22,7 +22,7 @@ namespace RentalCS
             }
         }
 
-        public TotalRental(Rates rates, List<UnitRental> Items)
+        public TotalRental(IRates rates, List<UnitRental> Items)
         {
             _rates = rates;
             RentalItems = Items;

@@ -9,9 +9,9 @@ namespace RentalCS
 {
     class HourlyCharger : ICharger
     {
-        private Rates _rates;
+        private IRates _rates;
 
-        public HourlyCharger(Rates rates)
+        public HourlyCharger(IRates rates)
         {
             _rates = rates;
         }

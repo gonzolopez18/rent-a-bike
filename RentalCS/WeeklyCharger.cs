@@ -9,16 +9,12 @@ namespace RentalCS
 {
     class WeeklyCharger : ICharger
     {
-        private Rates _rates;
-        private string Marito = "capo";
-
-        public WeeklyCharger(Rates rates)
+        private IRates _rates;
+      
+        public WeeklyCharger(IRates rates)
         {
             _rates = rates;
         }
-
-
-
 
         public double Charge(int quantity)
         {

@@ -9,19 +9,24 @@ namespace RentalCS
 {
     class ChargerFactory
     {
+        private IRates _rates;
+        public ChargerFactory(IRates rates)
+        {
+            _rates = rates;
+        }
         public virtual ICharger GetCharger(RentalType renttype)
         {
             ICharger Charger = null;
             switch (renttype)
             {
                 case RentalType.DAILY:
-                    Charger = new DailyCharger();
+                    Charger = new DailyCharger(_rates);
                     break;
                 case RentalType.HOURLY:
-                    Charger = new HourlyCharger();
+                    Charger = new HourlyCharger(_rates);
                     break;
                 case RentalType.WEEKLY:
-                    Charger = new WeeklyCharger();
+                    Charger = new WeeklyCharger(_rates);
                     break;
             }
             return Charger;

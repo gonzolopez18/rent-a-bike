@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RentalCS
 {
-    class Rates
+   public class Rates : IRates
     {
          public double GetHourlyCost()
         {
