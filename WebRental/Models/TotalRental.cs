@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalCS
+namespace WebRental.Models
 {
-    class TotalRental
+    public class TotalRental
     {
         public int ID { get; set; }
         private IRates _rates;
         public Customer customer { get; set; }
         public DateTime RentalDate { get; set; }
-        public ICollection<UnitRental>  RentalItems { get; set; }
+        public virtual ICollection<UnitRental>  RentalItems { get; set; }
         public bool IsFamilyRental { get; set; }
 
         public double TotalCost {

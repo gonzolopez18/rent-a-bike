@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentalCS
+namespace WebRental.Models
 {
     public enum RentalType
     {
@@ -19,6 +19,8 @@ namespace RentalCS
         private IRates _rates;
 
         public Guid ID { get; set; }
+        public int totalRentalID { get; set; }
+        public Bike Bike { get; set; }
         public int Quantity { get; set; }
         public RentalType RentType { get; set; }
         public DateTime InitDate { get; set; }
