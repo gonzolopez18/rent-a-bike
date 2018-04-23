@@ -22,6 +22,10 @@ namespace WebRental.Models
             }
         }
 
+        public TotalRental()
+        {
+
+        }
         public TotalRental(IRates rates, List<UnitRental> Items)
         {
             _rates = rates;
