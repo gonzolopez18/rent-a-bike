@@ -15,10 +15,11 @@ namespace WebRental.Models
         public virtual ICollection<UnitRental>  RentalItems { get; set; }
         public bool IsFamilyRental { get; set; }
 
-        //public TotalRental()
-        //{
+        [Obsolete("Only needed for serialization and materialization(The class 'WebRental.Models.TotalRental' has no parameterless constructor)", true)]
+        public TotalRental()
+        {
 
-        //}
+        }
         public TotalRental(IRates rates, List<UnitRental> Items)
         {
             _rates = rates;

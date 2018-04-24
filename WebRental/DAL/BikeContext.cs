@@ -12,9 +12,9 @@ namespace WebRental.DAL
         public BikeContext() : base()
         {
         }
-        public virtual DbSet<TotalRental> TotalRentals { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Bike> Bikes { get; set; }
+        public virtual IDbSet<TotalRental> TotalRentals { get; set; }
+        public virtual IDbSet<Customer> Customers { get; set; }
+        public virtual IDbSet<Bike> Bikes { get; set; }
         
 
          protected override void OnModelCreating(DbModelBuilder modelBuilder)

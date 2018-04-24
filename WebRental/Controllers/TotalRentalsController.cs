@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebRental.DAL;
 using WebRental.Models;
+using WebRental.Logic;
 
 namespace WebRental.Controllers
 {
@@ -18,6 +19,14 @@ namespace WebRental.Controllers
         // GET: TotalRentals
         public ActionResult Index()
         {
+            BikeService service = new BikeService(new BikeContext());
+            Bike bike = new Bike() { ID = Guid.NewGuid(), Code ="BK_1", Available = true, WheelSize = 20  };
+            List<UnitRental> items = new List<UnitRental>();
+            items.Add(new UnitRental(new Rates()) { ID = Guid.NewGuid(), Bike = bike, InitDate = DateTime.Now, Quantity = 3, RentType = RentalType.DAILY });
+
+            service.AddTotalRental("Gonzalo", DateTime.Now, true, items);
+
+
             //Rates rates = new Rates();
             //Bike bike = new Bike() { ID = Guid.NewGuid(), Code = "B_26_", Available = true, WheelSize = 26 };
 
