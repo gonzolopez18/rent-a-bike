@@ -7,14 +7,14 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using WebRental.Models;
 namespace WebRental.DAL
 {
-    public class BikeContext : DbContext
+    public class BikeContext : DbContext, IBikeContext
     {
         public BikeContext() : base()
         {
         }
-        public DbSet<TotalRental> TotalRentals { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Bike> Bikes { get; set; }
+        public virtual DbSet<TotalRental> TotalRentals { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Bike> Bikes { get; set; }
         
 
          protected override void OnModelCreating(DbModelBuilder modelBuilder)

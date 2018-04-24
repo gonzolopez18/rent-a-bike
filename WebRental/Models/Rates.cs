@@ -10,7 +10,20 @@ namespace WebRental.Models
     {
         public double GetRentCost( RentalType type)
         {
-            return 50;
+            double Cost = 0;
+            switch (type)
+            {
+                case (RentalType.HOURLY):
+                    Cost = 5;
+                    break;
+                case (RentalType.DAILY):
+                    Cost = 20;
+                    break;
+                case (RentalType.WEEKLY):
+                    Cost = 60;
+                    break;
+             }
+            return Cost;
         }
          public double GetHourlyCost()
         {

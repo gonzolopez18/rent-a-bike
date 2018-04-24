@@ -19,15 +19,15 @@ namespace WebRental.Controllers
         public ActionResult Index()
         {
             //Rates rates = new Rates();
-            //Bike bike = new Bike() { ID = new Guid(), Code = "B_26_", Available = true, WheelSize = 26 };
+            //Bike bike = new Bike() { ID = Guid.NewGuid(), Code = "B_26_", Available = true, WheelSize = 26 };
 
-            //UnitRental item = new UnitRental(rates) { ID = new Guid(), Bike = bike, InitDate = System.DateTime.Now, Quantity = 1, RentType = RentalType.DAILY };
+            //UnitRental item = new UnitRental(rates) { ID = Guid.NewGuid(), Bike = bike, InitDate = System.DateTime.Now, Quantity = 1, RentType = RentalType.DAILY };
             //List<UnitRental> items = new List<UnitRental>();
             //items.Add(item);
 
             //TotalRental rent = new TotalRental(rates, null) { ID = 1, RentalDate = DateTime.Now, customer = null, IsFamilyRental = false };
             //rent.RentalItems = items;
-            ////rent.RentalItems.Add(new UnitRental(rates) { ID = new Guid(), Bike = bike, InitDate = System.DateTime.Now, Quantity =3, RentType = RentalType.HOURLY });
+            ////rent.RentalItems.Add(new UnitRental(rates) { ID = Guid.NewGuid(), Bike = bike, InitDate = System.DateTime.Now, Quantity =3, RentType = RentalType.HOURLY });
 
             //db.TotalRentals.Add(rent);
             //db.SaveChanges();
@@ -49,7 +49,7 @@ namespace WebRental.Controllers
                 return HttpNotFound();
             }
 
-            Customer yo = new Customer() { ID = new Guid(), Name = "Gonzalo López" };
+            Customer yo = new Customer() { ID = Guid.NewGuid(), Name = "Gonzalo López 2" };
             totalRental.customer = yo;
             db.SaveChanges();
 
