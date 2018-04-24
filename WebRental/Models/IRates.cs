@@ -3,7 +3,7 @@
     public interface IRates
     {
         double GetRentCost(RentalType type);
-        int GetFamilyDiscount();
+        double GetFamilyDiscount();
         int GetFamilyMax();
         int GetFamilyMin();
 

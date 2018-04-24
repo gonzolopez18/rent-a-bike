@@ -37,9 +37,9 @@ namespace WebRental.Models
         {
             return 60;
         }
-        public int GetFamilyDiscount()
+        public double GetFamilyDiscount()
         {
-            return 30;
+            return  (30.0 / 100.0);
         }
         public int GetFamilyMin()
         {

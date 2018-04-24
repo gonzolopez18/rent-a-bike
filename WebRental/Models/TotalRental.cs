@@ -15,24 +15,17 @@ namespace WebRental.Models
         public virtual ICollection<UnitRental>  RentalItems { get; set; }
         public bool IsFamilyRental { get; set; }
 
-        public double TotalCost {
-            get
-            {
-                return CalculateTotalCost();
-            }
-        }
+        //public TotalRental()
+        //{
 
-        public TotalRental()
-        {
-
-        }
+        //}
         public TotalRental(IRates rates, List<UnitRental> Items)
         {
             _rates = rates;
             RentalItems = Items;
         }
 
-        private  double CalculateTotalCost()
+        public  double CalculateTotalCost()
         {
             double TotalCost = 0;
 
@@ -43,9 +36,11 @@ namespace WebRental.Models
 
             if ( IsFamilyRental && (RentalItems.Count >= _rates.GetFamilyMin() && RentalItems.Count <= _rates.GetFamilyMax()))
             {
-                return TotalCost * _rates.GetFamilyDiscount() ;
+                //TotalCost = (TotalCost * (1 - _rates.GetFamilyDiscount()));
+                double familyDiscount = 1 - _rates.GetFamilyDiscount();
+                TotalCost = (TotalCost * familyDiscount);
             }
-            
+
             return TotalCost;
         }
 
