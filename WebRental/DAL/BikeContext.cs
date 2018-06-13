@@ -7,7 +7,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using WebRental.Models;
 namespace WebRental.DAL
 {
-    public class BikeContext : DbContext, IBikeContext
+    public class BikeContext : DbContext
     {
         public BikeContext() : base()
         {

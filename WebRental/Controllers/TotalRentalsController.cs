@@ -19,12 +19,12 @@ namespace WebRental.Controllers
         // GET: TotalRentals
         public ActionResult Index()
         {
-            BikeService service = new BikeService(new BikeContext());
-            Bike bike = new Bike() { ID = Guid.NewGuid(), Code ="BK_1", Available = true, WheelSize = 20  };
-            List<UnitRental> items = new List<UnitRental>();
-            items.Add(new UnitRental(new Rates()) { ID = Guid.NewGuid(), Bike = bike, InitDate = DateTime.Now, Quantity = 3, RentType = RentalType.DAILY });
+            //BikeService service = new BikeService(new BikeContext());
+            //Bike bike = new Bike() { ID = Guid.NewGuid(), Code ="BK_1", Available = true, WheelSize = 20  };
+            //List<UnitRental> items = new List<UnitRental>();
+            //items.Add(new UnitRental(new Rates()) { ID = Guid.NewGuid(), Bike = bike, InitDate = DateTime.Now, Quantity = 3, RentType = RentalType.DAILY });
 
-            service.AddTotalRental("Gonzalo", DateTime.Now, true, items);
+            //service.AddTotalRental("Gonzalo", DateTime.Now, true, items);
 
 
             //Rates rates = new Rates();
@@ -40,9 +40,10 @@ namespace WebRental.Controllers
 
             //db.TotalRentals.Add(rent);
             //db.SaveChanges();
+            //return View(db.TotalRentals.ToList());
 
-
-            return View(db.TotalRentals.ToList());
+            BikeService bs = new BikeService();
+            return View(bs.GetAllRentals());
         }
 
         // GET: TotalRentals/Details/5
