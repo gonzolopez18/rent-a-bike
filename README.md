@@ -8,6 +8,19 @@ Also, i coded to interfaces rather than implementations, to allow future extensi
 
 To run the tests, download code from "rama1" branch, open with WS2015 or higher and run test from test explorer.
 
+Last changes:
+- Changed DRMS from Sql Server to MySql. 
+- Changed from EF to plain Ado.Net in Data Access Layer
+- Drop unnecesary proyect from solution
+
+
+Instructions:
+- download code from branch Master/rama1MySql.
+- run creation database script "WebRental/sql/rentaldb_Dump20180615.sql" on MySql.
+- set connection string.
+- F5
+
+
 Regards.
 
 Gonzalo López
