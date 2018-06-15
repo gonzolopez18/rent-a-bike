@@ -5,19 +5,24 @@ using System.Web;
 using WebRental.DAL;
 using WebRental.Models;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace WebRental.DAL
 {
-    public class BikeRepo
+    public class Bikes
     {
-        private MysqlHelper _context = new MysqlHelper();
-
-       public Bike Bike_getbyID(Guid id)
+       public static Bike Bike_getbyID(Guid id)
         {
             Bike result = new Bike() ;
-            string query = "bike_byID";
+            string query = "call bike_byID(@p_ID);";
 
-            DataTable tabla = _context.DataTable_return(query);
+            MySqlParameter[] paramArray = new MySqlParameter[]
+               {
+                    new MySqlParameter("p_ID", id.ToString("N"))
+               };
+
+            DataSet ds = MySqlHelper.ExecuteDataset(dalHelper.ConnectionString, query, paramArray);
+            DataTable tabla = ds.Tables[0];
 
             if (tabla != null && tabla.Rows.Count > 0)
             {
@@ -25,7 +30,7 @@ namespace WebRental.DAL
                 {
                     result = new Bike
                     {
-                        ID = (Guid)fila["ID"],
+                        ID = (Guid.Parse((string)fila["ID"])),
                         Available = (Boolean)fila["Available"],
                         Code = (string)fila["Code"],
                         WheelSize = (int)fila["WheelSize"]

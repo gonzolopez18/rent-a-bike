@@ -161,12 +161,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\TotalRentalsController.cs" />
-    <Compile Include="DAL\BikeContext.cs" />
-    <Compile Include="DAL\BikeRepo.cs" />
-    <Compile Include="DAL\CustomerRepo.cs" />
-    <Compile Include="DAL\TotalRentalRepo.cs" />
-    <Compile Include="DAL\MysqlHelper.cs" />
-    <Compile Include="DAL\UnitRentalRepo.cs" />
+    <Compile Include="DAL\Bikes.cs" />
+    <Compile Include="DAL\Customers.cs" />
+    <Compile Include="DAL\dalHelper.cs" />
+    <Compile Include="DAL\TotalRentals.cs" />
+    <Compile Include="DAL\UnitRentals.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
